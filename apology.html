@@ -1,1 +1,178 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Letter From My Heart | Our Universe</title>
+    <link rel="stylesheet" href="css/apology.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="apology-page">
+    <!-- Back to Galaxy -->
+    <a href="index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Our Universe</span>
+        <div class="button-sparkle"></div>
+    </a>
+    
+    <!-- Tear-stained Paper -->
+    <div class="paper-container">
+        <div class="paper">
+            <!-- Paper texture -->
+            <div class="paper-texture"></div>
+            <div class="paper-stains">
+                <div class="stain stain-1"></div>
+                <div class="stain stain-2"></div>
+                <div class="stain stain-3"></div>
+            </div>
+            
+            <!-- Actual Content -->
+            <div class="letter-content">
+                <div class="letter-header">
+                    <div class="wax-seal">
+                        <div class="seal-circle"></div>
+                        <div class="seal-heart"><i class="fas fa-heart"></i></div>
+                        <div class="seal-glow"></div>
+                    </div>
+                    <h1 id="apology-title" class="letter-title">From My Heart To Yours</h1>
+                    <div class="letter-date" id="letter-date">February 6, 2024</div>
+                </div>
+                
+                <div class="letter-body">
+                    <div class="tear-drop tear-1"></div>
+                    <div class="tear-drop tear-2"></div>
+                    
+                    <!-- EDITABLE LETTER CONTENT -->
+                    <div class="apology-text" id="apology-letter">
+                        <!-- Text will be loaded from CONFIG.js -->
+                        Loading my heartfelt letter...
+                    </div>
+                    
+                    <div class="letter-signature">
+                        <div class="signature-line"></div>
+                        <div class="signature-name" id="signature-name">With all my love,<br>[YOUR_NAME]</div>
+                        <div class="signature-heart"><i class="fas fa-heart"></i></div>
+                    </div>
+                </div>
+                
+                <div class="letter-footer">
+                    <div class="folding-corner"></div>
+                    <div class="page-number">Page 1 of 1</div>
+                </div>
+            </div>
+            
+            <!-- Envelope -->
+            <div class="envelope">
+                <div class="envelope-flap"></div>
+                <div class="envelope-body">
+                    <div class="envelope-address">
+                        <p>To: <span id="envelope-her-name">My Dearest Love</span></p>
+                        <p>Address: My Heart</p>
+                        <p>City: Foreverville</p>
+                    </div>
+                    <div class="envelope-stamp">
+                        <div class="stamp">
+                            <span class="stamp-value">Priceless</span>
+                            <span class="stamp-text">Love Stamp</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive Elements -->
+        <div class="letter-interactions">
+            <button class="letter-btn tear-btn" id="add-tear">
+                <i class="fas fa-tint"></i>
+                <span>Add a Tear</span>
+            </button>
+            <button class="letter-btn fold-btn" id="fold-letter">
+                <i class="fas fa-envelope"></i>
+                <span>Fold & Send</span>
+            </button>
+            <button class="letter-btn heart-btn" id="add-heart">
+                <i class="fas fa-heart"></i>
+                <span>Add Hearts</span>
+            </button>
+        </div>
+        
+        <!-- Animated Hearts -->
+        <div class="floating-hearts-apology"></div>
+        
+        <!-- Whispering Sound Effect -->
+        <div class="whisper-effect">
+            <i class="fas fa-comment-dots"></i>
+            <span>Hover over the letter to hear whispers</span>
+        </div>
+    </div>
+    
+    <!-- Bottom Navigation -->
+    <div class="apology-nav">
+        <a href="days/rose-day.html" class="nav-button next-button">
+            <span>Continue to Day 1: Rose Day</span>
+            <i class="fas fa-arrow-right"></i>
+            <div class="button-glow"></div>
+        </a>
+    </div>
+    
+    <!-- Loading from CONFIG -->
+    <script src="../CONFIG.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load apology text
+            const apologyText = CONFIG.APOLOGY.LETTER
+                .replace(/\[HER_NAME\]/g, CONFIG.HER_NAME)
+                .replace(/\[YOUR_NAME\]/g, CONFIG.YOUR_NAME);
+            
+            document.getElementById('apology-letter').innerHTML = 
+                apologyText.replace(/\n/g, '<br><br>');
+            
+            document.getElementById('apology-title').textContent = CONFIG.APOLOGY.TITLE;
+            document.getElementById('signature-name').innerHTML = 
+                `With all my love,<br>${CONFIG.YOUR_NAME}`;
+            document.getElementById('envelope-her-name').textContent = CONFIG.HER_NAME;
+            
+            // Set today's date
+            const today = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('letter-date').textContent = today.toLocaleDateString('en-US', options);
+            
+            // Interactive tears
+            document.getElementById('add-tear').addEventListener('click', function() {
+                const tear = document.createElement('div');
+                tear.className = 'interactive-tear';
+                tear.style.left = Math.random() * 80 + 10 + '%';
+                tear.style.top = Math.random() * 60 + 20 + '%';
+                document.querySelector('.letter-body').appendChild(tear);
+                
+                // Animate tear drop
+                gsap.to(tear, {
+                    top: '100%',
+                    opacity: 0,
+                    duration: 2,
+                    ease: "power2.in",
+                    onComplete: () => tear.remove()
+                });
+            });
+            
+            // Fold letter animation
+            document.getElementById('fold-letter').addEventListener('click', function() {
+                const paper = document.querySelector('.paper');
+                gsap.to(paper, {
+                    rotationY: 180,
+                    duration: 1.5,
+                    ease: "power2.inOut"
+                });
+                
+                // After folding, show envelope opening
+                setTimeout(() => {
+                    document.querySelector('.envelope-flap').style.transform = 'rotateX(-180deg)';
+                }, 800);
+            });
+        });
+    </script>
+</body>
+</html>
