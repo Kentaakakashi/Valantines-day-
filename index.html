@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Universe | For My Love</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Background Stars -->
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+    <!-- Central Sun (Your Love) -->
+    <div class="sun">
+        <div class="sun-core">
+            <h1 class="sun-title">Our Universe</h1>
+            <p class="sun-subtitle">A 7-Day Journey of Us</p>
+            <p class="message">For my dearest <span class="her-name">[Her Name]</span>,<br> every day with you is a new wonder.</p>
+        </div>
+        <div class="sun-pulse"></div>
+    </div>
+
+    <!-- Planets Orbit -->
+    <div class="orbit orbit-1">
+        <a href="rose-day.html" class="planet planet-1 active" id="rose-day">
+            <div class="planet-icon"><i class="fas fa-rose"></i></div>
+            <div class="planet-info">
+                <h3>Day 1: Floria</h3>
+                <p>Rose Day • <span class="date">Feb 7</span></p>
+                <p class="status">Click to Enter →</p>
+            </div>
+            <div class="planet-glow"></div>
+        </a>
+    </div>
+
+    <div class="orbit orbit-2">
+        <div class="planet planet-2 locked" data-day="2">
+            <div class="planet-icon"><i class="fas fa-gem"></i></div>
+            <div class="planet-info">
+                <h3>Day 2: Promisea</h3>
+                <p>Propose Day • <span class="date">Feb 8</span></p>
+                <p class="status"><i class="fas fa-lock"></i> Unlocks Tomorrow</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="orbit orbit-3">
+        <div class="planet planet-3 locked" data-day="3">
+            <div class="planet-icon"><i class="fas fa-candy-cane"></i></div>
+            <div class="planet-info">
+                <h3>Day 3: Cocoaland</h3>
+                <p>Chocolate Day • <span class="date">Feb 9</span></p>
+                <p class="status"><i class="fas fa-lock"></i> Unlocks Feb 9</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add orbits 4-7 similarly (Teddy, Promise, Hug, Kiss) -->
+    <!-- We'll do 7 total orbits -->
+
+    <!-- Navigation Instructions -->
+    <div class="instructions">
+        <p><i class="fas fa-mouse-pointer"></i> Hover over planets • <i class="fas fa-click"></i> Click to explore • <i class="fas fa-expand-arrows-alt"></i> Scroll to zoom</p>
+        <p class="countdown">Valentine's Day in <span id="countdown">7</span> days</p>
+    </div>
+
+    <!-- Love Currency Display -->
+    <div class="love-currency">
+        <div class="lovon-counter">
+            <i class="fas fa-heart-circle-bolt"></i>
+            <span id="lovons">150</span> Lovons
+        </div>
+        <p class="hint">Earn more by exploring!</p>
+    </div>
+
+    <!-- Background Music Toggle -->
+    <div class="music-toggle">
+        <i class="fas fa-music" id="music-icon"></i>
+        <span>Cosmic Love</span>
+    </div>
+
+    <!-- Floating Hearts -->
+    <div class="floating-hearts"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="js/universe.js"></script>
+</body>
+</html>
