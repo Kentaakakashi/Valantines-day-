@@ -1,1 +1,358 @@
+/* 🌟 HEARTBEAT ANIMATION */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
 
+.heartbeat {
+    animation: heartbeat 1.5s ease-in-out infinite;
+    color: #ff3366;
+}
+
+/* ✨ SPARKLE EFFECT */
+@keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+
+.sparkle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #fff 20%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: sparkle 1.5s ease-out;
+}
+
+/* 🌈 RAINBOW GLOW */
+@keyframes rainbow-glow {
+    0% { filter: hue-rotate(0deg) drop-shadow(0 0 10px #ff3366); }
+    25% { filter: hue-rotate(90deg) drop-shadow(0 0 15px #ffcc00); }
+    50% { filter: hue-rotate(180deg) drop-shadow(0 0 20px #66ff99); }
+    75% { filter: hue-rotate(270deg) drop-shadow(0 0 15px #6699ff); }
+    100% { filter: hue-rotate(360deg) drop-shadow(0 0 10px #ff3366); }
+}
+
+.rainbow-glow {
+    animation: rainbow-glow 3s linear infinite;
+}
+
+/* 🍃 FLOATING ANIMATION */
+@keyframes floating {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* 💫 SPIN AND GLOW */
+@keyframes spin-glow {
+    0% { transform: rotate(0deg) scale(1); opacity: 0.7; }
+    50% { transform: rotate(180deg) scale(1.2); opacity: 1; }
+    100% { transform: rotate(360deg) scale(1); opacity: 0.7; }
+}
+
+.spin-glow {
+    animation: spin-glow 4s linear infinite;
+}
+
+/* ❤️ PULSING HEART */
+@keyframes pulse-grow {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 51, 102, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 51, 102, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 51, 102, 0); }
+}
+
+.pulse-grow {
+    animation: pulse-grow 2s infinite;
+}
+
+/* 🌌 STAR TWINKLE */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+}
+
+.twinkle {
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+/* 🎈 BOUNCE ENTRANCE */
+@keyframes bounce-in {
+    0% { transform: scale(0); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    80% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.bounce-in {
+    animation: bounce-in 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 💖 LOVE WAVE */
+@keyframes love-wave {
+    0% { transform: translateX(-100%) scaleY(1); }
+    50% { transform: translateX(0%) scaleY(1.2); }
+    100% { transform: translateX(100%) scaleY(1); }
+}
+
+.love-wave {
+    animation: love-wave 2s ease-in-out infinite;
+}
+
+/* ✨ SHIMMER TEXT */
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+.shimmer-text {
+    background: linear-gradient(90deg, #ff3366, #ffcc00, #ff3366);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 3s infinite linear;
+}
+
+/* 🌀 VORTEX SPIN */
+@keyframes vortex {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.1); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+.vortex {
+    animation: vortex 10s linear infinite;
+}
+
+/* 🌸 PETAL FALL */
+@keyframes petal-fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.petal {
+    animation: petal-fall linear forwards;
+}
+
+/* 💌 ENVELOPE FLAP */
+@keyframes envelope-flap {
+    0% { transform: rotateX(0deg); }
+    100% { transform: rotateX(-180deg); }
+}
+
+.envelope-flap {
+    transform-origin: top;
+    animation: envelope-flap 1s ease-in-out;
+}
+
+/* 💧 TEAR DROP */
+@keyframes tear-drop {
+    0% {
+        transform: translateY(-20px) scale(0.5);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100px) scale(0);
+        opacity: 0;
+    }
+}
+
+.tear-drop {
+    animation: tear-drop 2s ease-in forwards;
+}
+
+/* 🌈 COLOR SHIFT */
+@keyframes color-shift {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+.color-shift {
+    animation: color-shift 5s linear infinite;
+}
+
+/* 🎀 RIBBON WAVE */
+@keyframes ribbon-wave {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+.ribbon-wave {
+    animation: ribbon-wave 2s ease-in-out infinite;
+    transform-origin: top center;
+}
+
+/* 🔮 HOLOGRAM GLITCH */
+@keyframes hologram-glitch {
+    0% { filter: hue-rotate(0deg) blur(0px); }
+    20% { filter: hue-rotate(90deg) blur(1px); }
+    40% { filter: hue-rotate(180deg) blur(0px); }
+    60% { filter: hue-rotate(270deg) blur(2px); }
+    80% { filter: hue-rotate(300deg) blur(0px); }
+    100% { filter: hue-rotate(360deg) blur(0px); }
+}
+
+.hologram {
+    animation: hologram-glitch 3s infinite;
+}
+
+/* 🎇 FIREWORKS */
+@keyframes fireworks {
+    0% { transform: translateY(0) scale(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-100px) scale(1); opacity: 0; }
+}
+
+.firework {
+    animation: fireworks 1s ease-out forwards;
+}
+
+/* 💫 WHIRLPOOL */
+@keyframes whirlpool {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.5); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+.whirlpool {
+    animation: whirlpool 8s linear infinite;
+}
+
+/* 🦋 BUTTERFLY FLUTTER */
+@keyframes butterfly {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(-5deg); }
+    75% { transform: translateY(-5px) rotate(5deg); }
+}
+
+.butterfly {
+    animation: butterfly 2s ease-in-out infinite;
+}
+
+/* 🌙 MOON PHASE */
+@keyframes moon-phase {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.moon {
+    animation: moon-phase 20s linear infinite;
+}
+
+/* 🍭 CANDY STRIPE */
+@keyframes candy-stripe {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 0; }
+}
+
+.candy-stripe {
+    background: repeating-linear-gradient(
+        45deg,
+        #ff3366,
+        #ff3366 10px,
+        #ffcc00 10px,
+        #ffcc00 20px
+    );
+    background-size: 100px 100px;
+    animation: candy-stripe 2s linear infinite;
+}
+
+/* 🎄 LIGHTS TWINKLE */
+@keyframes lights {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+.light {
+    animation: lights 1s ease-in-out infinite;
+    animation-delay: var(--delay);
+}
+
+/* 🌊 WATER RIPPLE */
+@keyframes ripple {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(4); opacity: 0; }
+}
+
+.ripple {
+    animation: ripple 1.5s ease-out infinite;
+}
+
+/* 🌀 INFINITY LOOP */
+@keyframes infinity {
+    0% { transform: translateX(0) rotate(0deg); }
+    25% { transform: translateX(100px) rotate(90deg); }
+    50% { transform: translateX(0) rotate(180deg); }
+    75% { transform: translateX(-100px) rotate(270deg); }
+    100% { transform: translateX(0) rotate(360deg); }
+}
+
+.infinity {
+    animation: infinity 4s linear infinite;
+}
+
+/* 🎡 CAROUSEL */
+@keyframes carousel {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.carousel {
+    animation: carousel 20s linear infinite;
+}
+
+/* 🪄 MAGIC SPARK */
+@keyframes magic-spark {
+    0% { transform: scale(0) rotate(0deg); opacity: 0; }
+    50% { transform: scale(1) rotate(180deg); opacity: 1; }
+    100% { transform: scale(0) rotate(360deg); opacity: 0; }
+}
+
+.magic-spark {
+    animation: magic-spark 1s ease-out;
+}
+
+/* 🏮 LANTERN GLOW */
+@keyframes lantern-glow {
+    0%, 100% { filter: brightness(1) drop-shadow(0 0 5px #ffcc00); }
+    50% { filter: brightness(1.5) drop-shadow(0 0 20px #ff9900); }
+}
+
+.lantern {
+    animation: lantern-glow 2s ease-in-out infinite;
+}
+
+/* 🌈 PRISM REFRACTION */
+@keyframes prism {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+.prism {
+    animation: prism 3s linear infinite;
+}
