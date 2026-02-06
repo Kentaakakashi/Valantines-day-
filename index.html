@@ -4,91 +4,207 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Universe | For My Love</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/galaxy.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Dancing+Script:wght@700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
-    <!-- Background Stars -->
-    <div id="stars"></div>
-    <div id="stars2"></div>
-    <div id="stars3"></div>
-
-    <!-- Central Sun (Your Love) -->
-    <div class="sun">
-        <div class="sun-core">
-            <h1 class="sun-title">Our Universe</h1>
-            <p class="sun-subtitle">A 7-Day Journey of Us</p>
-            <p class="message">For my dearest <span class="her-name">[Her Name]</span>,<br> every day with you is a new wonder.</p>
-        </div>
-        <div class="sun-pulse"></div>
+    <!-- ✨ Animated Background -->
+    <div class="universe-bg">
+        <div class="stars"></div>
+        <div class="twinkling-stars"></div>
+        <div class="clouds"></div>
+        <div class="floating-hearts"></div>
+        <div class="sparkles"></div>
     </div>
-
-    <!-- Planets Orbit -->
-    <div class="orbit orbit-1">
-        <a href="rose-day.html" class="planet planet-1 active" id="rose-day">
-            <div class="planet-icon"><i class="fas fa-rose"></i></div>
-            <div class="planet-info">
-                <h3>Day 1: Floria</h3>
-                <p>Rose Day • <span class="date">Feb 7</span></p>
-                <p class="status">Click to Enter →</p>
+    
+    <!-- 🌟 Central Love Orb -->
+    <div class="love-orb">
+        <div class="orb-glow"></div>
+        <div class="orb-content">
+            <h1 id="main-title" class="animate__animated animate__pulse animate__infinite">Loading Our Universe...</h1>
+            <p id="subtitle">A 7-Day Journey</p>
+            <div class="love-message">
+                <p id="welcome-message">For my dearest love...</p>
             </div>
-            <div class="planet-glow"></div>
+            <div class="hearts-counter">
+                <i class="fas fa-heart heartbeat"></i>
+                <span id="days-together">365</span> days of love
+            </div>
+        </div>
+        <div class="orb-rings">
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <div class="ring ring-3"></div>
+        </div>
+    </div>
+    
+    <!-- 🪐 Planets Navigation -->
+    <div class="planets-container">
+        <!-- DAY 1 - ROSE DAY -->
+        <a href="days/rose-day.html" class="planet planet-1 unlocked" data-day="1">
+            <div class="planet-core" style="background: linear-gradient(135deg, #ff66a3, #ff0066);"></div>
+            <div class="planet-ring"></div>
+            <div class="planet-info">
+                <h3><i class="fas fa-rose"></i> Day 1</h3>
+                <p>Rose Day</p>
+                <span class="planet-date">Feb 7</span>
+            </div>
+            <div class="planet-sparkle"></div>
+        </a>
+        
+        <!-- DAY 2 - PROPOSE DAY -->
+        <a href="days/propose-day.html" class="planet planet-2 locked" data-day="2">
+            <div class="planet-core" style="background: linear-gradient(135deg, #66ccff, #0066cc);"></div>
+            <div class="planet-info">
+                <h3><i class="fas fa-gem"></i> Day 2</h3>
+                <p>Propose Day</p>
+                <span class="planet-date">Feb 8</span>
+                <div class="locked-overlay"><i class="fas fa-lock"></i></div>
+            </div>
+        </a>
+        
+        <!-- Continue for Days 3-7... -->
+        
+        <!-- SPECIAL: APOLOGY PAGE -->
+        <a href="apology.html" class="planet planet-special apology-planet">
+            <div class="planet-core" style="background: linear-gradient(135deg, #cc66ff, #9933cc);"></div>
+            <div class="planet-info">
+                <h3><i class="fas fa-heart-crack"></i> Extra</h3>
+                <p>From My Heart</p>
+                <span class="hint">A special message</span>
+            </div>
+            <div class="teardrop"></div>
         </a>
     </div>
-
-    <div class="orbit orbit-2">
-        <div class="planet planet-2 locked" data-day="2">
-            <div class="planet-icon"><i class="fas fa-gem"></i></div>
-            <div class="planet-info">
-                <h3>Day 2: Promisea</h3>
-                <p>Propose Day • <span class="date">Feb 8</span></p>
-                <p class="status"><i class="fas fa-lock"></i> Unlocks Tomorrow</p>
+    
+    <!-- 🎮 Interactive Elements -->
+    <div class="interactive-ui">
+        <!-- Countdown -->
+        <div class="countdown-widget">
+            <div class="countdown-title">
+                <i class="fas fa-calendar-heart"></i>
+                <span id="countdown-label">Valentine's Day in</span>
+            </div>
+            <div class="countdown-timer">
+                <div class="time-unit">
+                    <span class="number" id="countdown-days">7</span>
+                    <span class="label">Days</span>
+                </div>
+                <div class="time-separator">:</div>
+                <div class="time-unit">
+                    <span class="number" id="countdown-hours">23</span>
+                    <span class="label">Hours</span>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="orbit orbit-3">
-        <div class="planet planet-3 locked" data-day="3">
-            <div class="planet-icon"><i class="fas fa-candy-cane"></i></div>
-            <div class="planet-info">
-                <h3>Day 3: Cocoaland</h3>
-                <p>Chocolate Day • <span class="date">Feb 9</span></p>
-                <p class="status"><i class="fas fa-lock"></i> Unlocks Feb 9</p>
+        
+        <!-- Love Currency -->
+        <div class="love-currency-widget">
+            <div class="currency-display">
+                <i class="fas fa-heart-circle-bolt earning"></i>
+                <span class="lovon-count">1,000</span>
+                <span class="currency-name">Lovons</span>
             </div>
+            <div class="currency-hint">Explore planets to earn more!</div>
+        </div>
+        
+        <!-- Music Toggle -->
+        <button class="music-toggle" id="music-toggle">
+            <i class="fas fa-music"></i>
+            <span class="music-text">Cosmic Love</span>
+            <div class="music-wave">
+                <span></span><span></span><span></span>
+            </div>
+        </button>
+        
+        <!-- Secret Edit Mode (Hold Ctrl+E) -->
+        <div class="edit-mode-indicator" id="edit-mode">
+            <i class="fas fa-edit"></i> Edit Mode: OFF
         </div>
     </div>
-
-    <!-- Add orbits 4-7 similarly (Teddy, Promise, Hug, Kiss) -->
-    <!-- We'll do 7 total orbits -->
-
-    <!-- Navigation Instructions -->
+    
+    <!-- 📱 Mobile Friendly Instructions -->
     <div class="instructions">
-        <p><i class="fas fa-mouse-pointer"></i> Hover over planets • <i class="fas fa-click"></i> Click to explore • <i class="fas fa-expand-arrows-alt"></i> Scroll to zoom</p>
-        <p class="countdown">Valentine's Day in <span id="countdown">7</span> days</p>
-    </div>
-
-    <!-- Love Currency Display -->
-    <div class="love-currency">
-        <div class="lovon-counter">
-            <i class="fas fa-heart-circle-bolt"></i>
-            <span id="lovons">150</span> Lovons
+        <div class="instruction-item">
+            <i class="fas fa-hand-pointer"></i>
+            <span>Click planets to explore</span>
         </div>
-        <p class="hint">Earn more by exploring!</p>
+        <div class="instruction-item">
+            <i class="fas fa-expand-alt"></i>
+            <span>Scroll to zoom universe</span>
+        </div>
+        <div class="instruction-item">
+            <i class="fas fa-heart"></i>
+            <span>Each day unlocks at midnight</span>
+        </div>
     </div>
-
-    <!-- Background Music Toggle -->
-    <div class="music-toggle">
-        <i class="fas fa-music" id="music-icon"></i>
-        <span>Cosmic Love</span>
+    
+    <!-- 🎉 Daily Surprise -->
+    <div class="daily-surprise">
+        <button id="surprise-btn" class="surprise-button">
+            <i class="fas fa-gift"></i>
+            <span>Today's Surprise</span>
+            <div class="confetti-preview"></div>
+        </button>
     </div>
-
-    <!-- Floating Hearts -->
-    <div class="floating-hearts"></div>
-
+    
+    <!-- ✏️ Text Editor Modal (Hidden by default) -->
+    <div class="text-editor-modal" id="text-editor">
+        <div class="editor-header">
+            <h3><i class="fas fa-edit"></i> Easy Text Editor</h3>
+            <button class="close-editor">&times;</button>
+        </div>
+        <div class="editor-body">
+            <p class="editor-help">Change any text on the website! Edit below and save.</p>
+            <div class="editor-section">
+                <label>Her Name:</label>
+                <input type="text" id="edit-her-name" class="editor-input">
+            </div>
+            <div class="editor-section">
+                <label>Welcome Message:</label>
+                <textarea id="edit-welcome" class="editor-textarea"></textarea>
+            </div>
+            <!-- More editable fields will be added by JavaScript -->
+            <div class="editor-actions">
+                <button id="save-edits" class="save-btn">
+                    <i class="fas fa-save"></i> Save All Changes
+                </button>
+                <button id="reset-edits" class="reset-btn">
+                    <i class="fas fa-undo"></i> Reset to Original
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="CONFIG.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Canvas-confetti/1.6.0/confetti.browser.min.js"></script>
     <script src="js/universe.js"></script>
+    <script src="js/text-editor.js"></script>
+    <script src="js/effects.js"></script>
+    
+    <script>
+        // 🚀 Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load all config texts
+            document.getElementById('main-title').textContent = CONFIG.GALAXY.MAIN_TITLE;
+            document.getElementById('subtitle').textContent = CONFIG.GALAXY.SUBTITLE;
+            document.getElementById('welcome-message').innerHTML = 
+                CONFIG.GALAXY.WELCOME_MESSAGE.replace('[HER_NAME]', CONFIG.HER_NAME);
+            document.getElementById('countdown-label').textContent = CONFIG.GALAXY.COUNTDOWN_TEXT;
+            
+            // Calculate days together
+            const start = new Date(CONFIG.RELATIONSHIP_START);
+            const today = new Date();
+            const diffTime = Math.abs(today - start);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            document.getElementById('days-together').textContent = diffDays;
+        });
+    </script>
 </body>
 </html>
